@@ -200,7 +200,8 @@ button {  width: auto; overflow: visible; }
  /* Primary Styles
     Author: 
  */
-
+body { height: 100%; width: 100%; position: absolute; top: 0; left: 0; }
+.presentation { position: absolute; height: 100%; width:100%; top: 0; left: 0; display:block; overflow:hidden; background: #778; }
 
 
 
