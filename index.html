@@ -46,18 +46,46 @@
                 <header>
                     <h1>Slide Title</h1>
                 </header>
+                <section class="middle">
+                    This is some content
+                </section>
+                <span class="counter">1</span>
             </div>
             <div class="slide future">
-                
+                <section class="middle">
+                    <h1>Group Title</h1>
+                </section>
+                <span class="counter">2</span>
             </div>
             <div class="slide far-future">
-                
+                <header>
+                    <h1>New Selectors</h1>
+                </header>
+                <section>
+                    <h2>Finding elements by class (DOM API)</h2>
+                    <pre>
+                        var el = document.getElementById('section1');
+                        el.focus();
+
+                        var els = document.getElementsByTagName('div');
+                        els[0].focus();
+
+                        var els = document.<b>getElementsByClassName</b>('section');
+                        els[0].focus();
+                    </pre>
+                    <h2>Finding elements by CSS syntax (Selectors API)</h2>
+                    <pre>
+                        var els = document.querySelectorAll("ul li:nth-child(odd)");
+                        var els = document.querySelectorAll("table.test > tr > td");
+                    </pre>
+                </section>
+                <span class="counter">3</span>
             </div>
             <div class="slide distant">
-                
+                <span class="counter">4</span>
             </div>
             <div class="slide distant">
-                
+                <span class="counter">5</span>
             </div>
         </div> <!-- end of .slides -->
     </div> <!-- end of .presentation -->
