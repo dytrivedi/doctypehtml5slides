@@ -233,6 +233,12 @@ pre b {
     color: #c61800;
     font-weight: normal;
 }
+section ul {
+    font-size: 30px;
+}
+section ul li {
+    padding: 10px 0;   
+}
 .presentation { 
     position: absolute; 
     height: 100%; 
