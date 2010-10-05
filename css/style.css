@@ -84,7 +84,7 @@ select, input, textarea { font:99% sans-serif; }
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
- 
+
 
 
 /* 
@@ -97,14 +97,14 @@ body, select, input, textarea { color:#444; }
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
- 
+
 /* www.aestheticallyloyal.com/public/optimize-legibility/ */ 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; text-rendering: optimizeLegibility; }
 
 /* maxvoltar.com/archive/-webkit-font-smoothing */
 html { -webkit-font-smoothing: antialiased; }
 
- 
+
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
@@ -123,9 +123,9 @@ td, td img { vertical-align:top; }
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
 
-pre { 
-  padding: 15px; 
-  
+pre {
+  padding: 15px;
+
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
   white-space: pre; /* CSS2 */
   white-space: pre-wrap; /* CSS 2.1 */
@@ -199,14 +199,14 @@ button {  width: auto; overflow: visible; }
 
  /* Primary Styles
  */
-body { 
-    font-family: "Museo Sans", "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", "Bitstream Vera Sans", sans-serif; 
+body {
+    font-family: "Museo Sans", "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", "Bitstream Vera Sans", sans-serif;
     font-size: 24px;
-    height: 100%; 
-    width: 100%; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 h1 {
     font-size: 50px;
@@ -237,46 +237,43 @@ section ul {
     font-size: 30px;
 }
 section ul li {
-    padding: 10px 0;   
+    padding: 10px 0;
 }
-.presentation { 
-    position: absolute; 
-    height: 100%; 
-    width: 100%; 
-    top: 0; 
-    left: 0; 
-    overflow: hidden; 
-    background: #778; 
-}
-.slides { 
-    width: 100%; 
-    height: 100%; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
+.presentation {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #778;
 }
 .slides {
-    -webkit-transition: -webkit-transform 1s ease-in-out;
-}
-.slide { 
-    width: 900px; 
-    height: 700px; 
-    position: absolute; 
-    left: 50%; 
-    top: 50%; 
-    overflow: hidden; 
-    border-top-right-radius: 20px; 
-    border-bottom-left-radius: 20px; 
-    -moz-border-radius-topright: 20px; 
-    -moz-border-radius-bottomleft: 20px; 
-    background: #d1d1d1; 
-    margin-top: -350px; 
-    display: none; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .slide {
-    -webkit-transition: margin 0.25s ease-in-out;
+    width: 900px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    background: #d1d1d1;
+    margin-top: -350px;
+    display: none;
+}
+.slide {
+    background: #b9bcdd url(../images/bg.png) repeat-x;
     background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#BBD), to(white));
-    background: -moz-linear-gradient(center bottom , #BBBBDD, #FFFFFF) repeat scroll 0 0 transparent
+    background: -moz-linear-gradient(center bottom , #BBBBDD, #FFFFFF) repeat scroll 0 0 transparent;
 }
 .slide .counter {
     display: block;
@@ -294,24 +291,24 @@ section ul li {
     margin-left: -1400px;
     visibility: visible;
 }
-.slide.current { 
-    margin-left: -450px; 
-    visibility: visible; 
-    display: block; 
+.slide.current {
+    margin-left: -450px;
+    visibility: visible;
+    display: block;
 }
-.slide.future { 
-    display: block; 
-    margin-left: 500px; 
-    visibility: visible; 
+.slide.future {
+    display: block;
+    margin-left: 500px;
+    visibility: visible;
 }
-.slide.far-future { 
-    display: block; 
-    margin-left: 1500px; 
+.slide.far-future {
+    display: block;
+    margin-left: 1500px;
 }
-header { 
-    position: absolute; 
-    top: 25px; 
-    left: 30px; 
+header {
+    position: absolute;
+    top: 25px;
+    left: 30px;
 }
 section, footer {
     display: block;
@@ -329,7 +326,7 @@ section.middle {
 
 
 
-/* 
+/*
  * print styles
  * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
  */
@@ -338,14 +335,14 @@ section.middle {
 
   a, a:visited { color: #444 !important; text-decoration: underline; }
 
-  a:after { content: " (" attr(href) ")"; } 
+  a:after { content: " (" attr(href) ")"; }
 
   abbr:after { content: " (" attr(title) ")"; }
-  
+
   .ir a:after { content: ""; }  /* Don't show links for images */
-  
+
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  
+
   img { page-break-inside: avoid; }
 
   @page { margin: 0.5cm; }
@@ -361,22 +358,22 @@ section.middle {
  * Media queries for responsive design
  */
 
-@media all and (orientation:portrait) { 
+@media all and (orientation:portrait) {
   /* Style adjustments for portrait mode goes here */
-  
+
 }
 
-@media all and (orientation:landscape) { 
+@media all and (orientation:landscape) {
   /* Style adjustments for landscape mode goes here */
-  
+
 }
 
-/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
    Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
-  
-  
+
+
   /* Prevent iOS, WinMobile from adjusting font size */
-  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
 }
 
