@@ -224,7 +224,9 @@ pre {
     font-size: 18px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    background: rgb(235, 224, 234);
     background: rgba(255, 0, 0, 0.046875);
+    border: 1px solid rgb(231, 171, 183);
     border: 1px solid rgba(255, 0, 0, 0.2);
     padding: 10px 20px;
     text-align: left;
