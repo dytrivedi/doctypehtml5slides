@@ -25,6 +25,9 @@
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="js/modernizr-1.5.min.js"></script>
     
+    <!-- Cloudmade map for demo -->
+    <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
+    
     <script type="text/javascript" src="http://use.typekit.com/lnv2abr.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -38,7 +41,7 @@
 
     <div class="presentation">
         <div class="slides">
-            <div class="slide current">                
+            <div class="slide current">
                 <style>
                     #logowrapper {
                         left: auto;
@@ -130,7 +133,7 @@
                 <img id="censor" src="images/censor.png" alt="only for adults!" />
                 <span class="counter">4</span>
             </div>
-            <div class="slide far-future">            
+            <div class="slide far-future">
                 <section class="middle">
                     <img src="images/location.png" alt="where am i?" />
                     <h1>Geolocation</h1>
@@ -213,7 +216,7 @@
                 </header>
                 <section>
                     <ul>
-                        <li>navigator.geolocation.getCurrentPosition()</li>
+                        <li>navigator.geolocation.<b>getCurrentPosition()</b></li>
                         <li>"One shot"</li>
                     </ul>
                     <pre>
@@ -389,7 +392,7 @@
                 </header>
                 <section>                    
                     <pre>
-                        <span class="comments">// Retain a position for 75 seconds</span>
+                        <span class="comments">// Cache a position for 75 seconds</span>
                         navigator.geolocation.getCurrentPosition(show_map, handle_error, <b>{maximumAge:75000}</b>);
                         
                         <span class="comments">// Force to use GPS if available</span>
@@ -400,6 +403,96 @@
                     </pre>
                 </section>                
                 <span class="counter">13</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Watching the current location</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>navigator.geolocation.<b>watchPosition()</b></li>
+                        <li>"Requests repeated position updates"</li>
+                        <li>Same as <b>getCurrentPosition()</b> - the callback is called every time the position is updated.</li>
+                        <li>Get a handle to watchPosition, and use clearWatch(handle) to stop getting the updates. Just like <b>setInterval()</b> and <b>clearInterval()</b></li>
+                    </ul>
+                    <br/>
+                    <pre>
+                        <span class="comments">// Simple, eh?</span>
+                        var watchId = navigator.geolocation.<b>watchPosition</b>(update_map, handle_error);
+
+                        <span class="comments">// On clicking some button, we want all this to stop.</span>
+                        function someButtonClickHandler() {
+                        &nbsp;&nbsp;&nbsp;&nbsp;navigator.geolocation.<b>clearWatch</b>(watchId);
+                        }
+                    </pre>
+                </section>
+                <span class="counter">14</span>
+            </div>
+            <div class="slide far-future">
+                <style>
+                    #map_demo {
+                        width:100%;
+                        height:480px;
+                    }
+                </style>
+                <header>
+                    <h1>Demo</h1>
+                </header>                
+                <section>
+                    <button id="whereami">Where am I?</button>
+                    <br/><br/>
+                    <div id="map_demo"></div>
+                </section>
+                <script>
+                    /*var cloudmade = new CM.Tiles.CloudMade.Web({key: 'BC9A493B41014CAABB98F0471D759707',styleId: 15801});
+	                var map_demo = new CM.Map('map_demo', cloudmade);
+	                map_demo.disableScrollWheelZoom();
+	                map_demo.addControl(new CM.LargeMapControl());
+	                map_demo.addControl(new CM.ScaleControl());
+	                var meIcon = new CM.Icon();
+	                meIcon.image = "images/icon_me.png";
+	                meIcon.iconSize = new CM.Size(28, 47);
+	                meIcon.iconAnchor = new CM.Point(14, 47);
+	                var currentLatLng = new CM.LatLng(0,0);
+		            map_demo.setCenter(currentLatLng,1);
+		            document.getElementById('whereami').addEventListener('click', function(){
+		                if (navigator.geolocation) {		                    
+		                    navigator.geolocation.getCurrentPosition(show_map);
+		                }
+		                function show_map(position){
+		                    alert('test');
+    		                currentLatLng = new CM.LatLng(position.coords.latitude, position.coords.longitude);
+    		                map_demo.setCenter(currentLatLng,15);
+		                }
+		            });*/
+                </script>
+                <span class="counter">15</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Unsupported platforms?</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>Google Gears - almost the same as geolocation API.</li>
+                        <li>Many older mobile platforms have device specific geolocation APIs - e.g. BlackBerry, Nokia, Palm, etc.</li>
+                    </ul>
+                    <h2>Let there be geolocation! geo.js!</h2>
+                    <ul>
+                        <li><a href="http://code.google.com/p/geo-location-javascript/">http://code.google.com/p/geo-location-javascript/</a></li>
+                        <li>Open source, MIT-licensed library.</li>
+                        <li>Still need to include <b>gears_init.js</b></li>
+                        <li>Normalizes API differences across different platforms.</li>
+                        <li>Doesn't support <b>watchPosition()</b> yet, so <b>getCurrentPosition()</b> has to be polled continuously.</li>
+                    </ul>
+                </section>
+                <span class="counter">16</span>
+            </div>
+            <div class="slide far-future">
+                <section class="middle">
+                    <h1>Thank You.</h1>
+                </section>
+                <span class="counter">17</span>
             </div>
         </div> <!-- end of .slides -->
     </div> <!-- end of .presentation -->

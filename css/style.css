@@ -33,7 +33,7 @@ time, mark, audio, video {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
-}                  
+}
 
 article, aside, figure, footer, header, 
 hgroup, nav, section { display:block; }
@@ -240,6 +240,9 @@ pre b {
 }
 pre .comments {
     color: green;
+}
+button {
+    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", "Bitstream Vera Sans", sans-serif;
 }
 section ul {
     font-size: 30px;
