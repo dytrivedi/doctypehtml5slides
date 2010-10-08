@@ -212,8 +212,11 @@ h1 {
     font-size: 50px;
 }
 h2 {
-    font-size: 20px;
+    font-size: 36px;
     margin: 15px 0 5px;
+}
+h3 {
+    font-size: 15px;
 }
 h2:first-child {
     margin-top: 0;
@@ -234,6 +237,9 @@ pre {
 pre b {
     color: #c61800;
     font-weight: normal;
+}
+pre .comments {
+    color: green;
 }
 section ul {
     font-size: 30px;
@@ -312,10 +318,13 @@ header {
     top: 25px;
     left: 30px;
 }
-section, footer {
+section {
     display: block;
     margin: 100px 30px 0;
     overflow: hidden;
+}
+footer {
+    display: block;
 }
 section.middle {
     display: table-cell;
@@ -324,7 +333,13 @@ section.middle {
     width: 900px;
     height: 700px;
 }
-
+table {
+    margin: 0 auto;
+}
+table td, table th {
+    padding: 10px;
+    border: 1px dashed #444444;
+}
 
 
 

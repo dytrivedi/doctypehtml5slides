@@ -6,10 +6,6 @@
     <!-- www.phpied.com/conditional-comments-block-downloads/ -->
     <!--[if IE]><![endif]-->
 
-    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
-         Remove this if you use the .htaccess -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
     <title>HTML5 Presentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,70 +38,368 @@
 
     <div class="presentation">
         <div class="slides">
-            <div class="slide current">
-                <!-- Your custom slide styles here -->
+            <div class="slide current">                
                 <style>
-                    #welcometitle h1{
-                        font-size:64px;
+                    #logowrapper {
+                        left: auto;
+                        right: 35px;
                     }
+                    #logo {
+                        font-size: 28px;                        
+                    }
+                    #logo a {                        
+                        color: #444;
+                        border-bottom: 0 none;
+                        text-decoration: none;
+                        text-transform: lowercase;
+                    }
+                    #logo a:hover {
+                        border-bottom: 0 none;
+                        text-decoration: none;
+                    }
+                    #logo .brkt {
+                        color: #6699cc;
+                    }
+                    #logo .bang {
+                        color: red;
+                    }
+                    #logo sup {
+                        font-size: 60%;
+                        margin-right: -3px;
+                    }
+                    #logo .domain {
+                        color: #999999;
+                    }
+                    #welcometitle h1{
+                        font-size: 64px;                        
+                    }                    
                 </style>
-                <section class="middle" id="welcometitle">
-                    <h1>Group Title</h1>
+                <header id="logowrapper">
+                    <h1 id="logo">
+                        <a href="http://doctypehtml5.in">
+                           <span class="brkt">&lt;</span><span class="bang">!</span><span itemprop="summary">DocType HTML<sup>5</sup></span><span class="domain">.in</span><span class="brkt">&gt;</span>
+                        </a>
+                    </h1>
+                </header>
+                <section class="middle" id="welcometitle">                    
+                    <h1>Geolocation, Offline &amp;<br/> Mobile</h1>
                 </section>
                 <span class="counter">1</span>
-                <!-- Your custom slide scripts here. Bind the events to elements such as buttons. -->
-                <script>
-                </script>
             </div>
             <div class="slide future">
-                <header>
-                    <h1>Slide Title</h1>
-                </header>
-                <section>
-                    <ul>
-                        <li>Client Side Storage (Web SQL Database, App Cache, Web Storage)</li>
-                        <li>Communication (Web Sockets, Worker Workers)</li>
-                        <li>Desktop experience (Notifications, Drag and Drop API)</li>
-                        <li>Geolocation</li>                        
-                    </ul>
+                <style>                    
+                    #speakerinfo h2 {
+                        font-size: 36px;
+                    }
+                    #speakerinfo h3 {
+                        font-size: 28px;
+                    }
+                    #speakerinfo .twitter {
+                        display: inline-block;
+                        background: url(images/twitter.png) no-repeat;                        
+                        height: 39px;
+                        padding-left: 53px;
+                        padding-top: 7px;
+                    }
+                </style>
+                <section class="middle" id="speakerinfo">
+                    <h2>Dhaval Trivedi</h2>
+                    <h3>UX Engineer, <a href="http://studiomarch.com">Studio March</a></h3>
+                    <br/>
+                    <h3><a class="twitter" href="http://twitter.com/dhavaltrivedi">@dhavaltrivedi</a></h3>
                 </section>
                 <span class="counter">2</span>
             </div>
             <div class="slide far-future">
-                <header>
-                    <h1>New Selectors</h1>
-                </header>
-                <section>
-                    <h2>Finding elements by class (DOM API)</h2>
-                    <pre>
-                        var el = document.getElementById('section1');
-                        el.focus();
-
-                        var els = document.getElementsByTagName('div');
-                        els[0].focus();
-
-                        var els = document.<b>getElementsByClassName</b>('section');
-                        els[0].focus();
-                    </pre>
-                    <h2>Finding elements by CSS syntax (Selectors API)</h2>
-                    <pre>
-                        var els = document.querySelectorAll("ul li:nth-child(odd)");
-                        var els = document.querySelectorAll("table.test > tr > td");
-                    </pre>
+                <style>
+                    #intentionalblank {
+                        font-size: 28px;
+                    }
+                </style>
+                <section class="middle">
+                    <h2 id="intentionalblank">This Page Intentionally Left Blank</h2>
                 </section>
                 <span class="counter">3</span>
             </div>
             <div class="slide far-future">
-                <header>
-                    <h1>Slide 4</h1>
-                </header>
+                <style>
+                    #censor {
+                        margin-top:5px;
+                    }
+                </style>
+                <img id="censor" src="images/censor.png" alt="only for adults!" />
                 <span class="counter">4</span>
+            </div>
+            <div class="slide far-future">            
+                <section class="middle">
+                    <img src="images/location.png" alt="where am i?" />
+                    <h1>Geolocation</h1>
+                </section>
+                <span class="counter">5</span>
             </div>
             <div class="slide far-future">
                 <header>
-                    <h1>Slide 5</h1>
+                    <h1>The Geolocation API...</h1>
                 </header>
-                <span class="counter">5</span>
+                <section>
+                    <ul>
+                        <li>High level interface to device implementation.</li>
+                        <li>Agnostic of the underlying information sources.</li>
+                        <li>Location inferred from GPS, WPS, Cell Tower Triangulation, IP Address, etc.</li>
+                        <li>Location information is represented by latitude and longitude co-ordinates.</li>
+                        <li>No guarantee! Accuracy depending availability of geo data.</li>
+                        <li>Sharing your location is always opt-in. If you don’t want to, you don’t have to.
+                            <br/><br/>Infobar:<br/>
+                            <img src="images/geolocation_infobar.png" alt="geolocation prompt" />
+                        </li>
+                    </ul>
+                </section>
+                <span class="counter">6</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>...is supported by</h1>
+                </header>
+                <section class="middle">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>FireFox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Opera</th>
+                                <th>iPhone</th>
+                                <th>Android</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3.5+</td>
+                                <td>5.0+</td>
+                                <td>5.0+</td>
+                                <td>10.6+</td>
+                                <td>3.0+</td>
+                                <td>2.0+</td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </section>
+                <span class="counter">7</span>
+            </div>
+             <div class="slide far-future">
+                <header>
+                    <h1>The geolocation object</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>Geolocation API is published through <b>geolocation</b> child object within <b>navigator</b> object.</li>
+                        <li>If the object exists, geolocation services are available. You can therefore:</li>
+                    </ul>
+                    <pre>
+                        if (<b>navigator.geolocation</b>) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// geolocation is available. yay!</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// do stuff.</span>
+                        } else {
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// bugger</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert ('Geolocation services are not supported by your browser');
+                        }
+                    </pre>
+                </section>
+                <span class="counter">8</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Getting the location</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>navigator.geolocation.getCurrentPosition()</li>
+                        <li>"One shot"</li>
+                    </ul>
+                    <pre>
+                        <span class="comments">// Three parameters - Success callback, an Optional Error callback, and an Optional PositionOptions Object.</span>
+                        navigator.geolocation.<b>getCurrentPosition</b>(show_map, handle_error);
+
+                        <span class="comments">// callback is called asynchronously</span>
+                        <span class="comments">// with a Position object</span>
+                        function <b>show_map</b>(position) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;var latitude = position.coords.latitude;
+                        &nbsp;&nbsp;&nbsp;&nbsp;var longitude = position.coords.longitude;
+                        &nbsp;&nbsp;&nbsp;&nbsp;var accuracy = position.coords.accuracy;
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// what are you waiting for?</span>
+                        }
+
+                        <span class="comments">// things gone awry. error callback will be called with PositionError object.</span>
+                        function <b>handle_error</b>(err) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (err.code == 1) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// user said no!</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        }                        
+                    </pre>
+                </section>
+                <span class="counter">9</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h2>The Position Object</h2>                    
+                </header>
+                <section>
+                    <ul>
+                        <li>Has two properties - coords and timestamp.</li>                        
+                    </ul>
+                    <br/>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>coords.latitude</td>
+                                <td>double</td>
+                                <td>decimal degrees</td>
+                            </tr>
+                            <tr>
+                                <td>coords.longitude</td>
+                                <td>double</td>
+                                <td>decimal degrees</td>
+                            </tr>
+                            <tr>
+                                <td>coords.accuracy</td>
+                                <td>double</td>
+                                <td>meters</td>
+                            </tr>
+                            <tr>
+                                <td>coords.altitude</td>
+                                <td>double or null</td>
+                                <td>meters</td>
+                            </tr>
+                            <tr>
+                                <td>coords.altitudeAccuracy</td>
+                                <td>double or null</td>
+                                <td>meters</td>
+                            </tr>
+                            <tr>
+                                <td>coords.heading</td>
+                                <td>double or null</td>
+                                <td>degrees</td>
+                            </tr>
+                            <tr>
+                                <td>coords.speed</td>
+                                <td>double or null</td>
+                                <td>meters/second</td>
+                            </tr>
+                            <tr>
+                                <td>timestamp</td>
+                                <td>DOMTimeStamp</td>
+                                <td>Date() object</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <span class="counter">10</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h2>The PositionError Object</h2>                    
+                </header>
+                <section>
+                    <ul>
+                        <li>Has two properties - code (enumerated error code) and message (for logging).</li>
+                    </ul>
+                    <br/>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Error</th>
+                                <th>Enumerated Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PERMISSION_DENIED</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>POSITION_UNAVAILABLE</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>TIMEOUT</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>UNKNOWN_ERROR</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <span class="counter">11</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h2>The PositionOptions Object...</h2>                    
+                </header>
+                <section>
+                    <ul>
+                        <li>Has three properties - enableHighAccuracy, timeout and maximumAge.</li>
+                        <li>All are optional.</li>
+                    </ul>
+                    <br/>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>enableHighAccuracy</td>
+                                <td>Boolean</td>
+                                <td>false</td>
+                                <td>true might be slower, may fail.</td>
+                            </tr>
+                            <tr>
+                                <td>timeout</td>
+                                <td>long</td>
+                                <td>(no default)</td>
+                                <td>milliseconds</td>
+                            </tr>
+                            <tr>
+                                <td>maximumAge</td>
+                                <td>long</td>
+                                <td>0</td>
+                                <td>milliseconds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>                
+                <span class="counter">12</span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h2>...examples</h2>                    
+                </header>
+                <section>                    
+                    <pre>
+                        <span class="comments">// Retain a position for 75 seconds</span>
+                        navigator.geolocation.getCurrentPosition(show_map, handle_error, <b>{maximumAge:75000}</b>);
+                        
+                        <span class="comments">// Force to use GPS if available</span>
+                        navigator.geolocation.getCurrentPosition(show_map, handle_error, <b>{enableHighAccuracy: true}</b>);
+                        
+                        <span class="comments">// Fall back to a previously cached position</span>
+                        navigator.geolocation.getCurrentPosition(show_map, handle_error, <b>{maximumAge:Infinity, timeout:0, enableHighAccuracy: true}</b>);
+                    </pre>
+                </section>                
+                <span class="counter">13</span>
             </div>
         </div> <!-- end of .slides -->
     </div> <!-- end of .presentation -->
