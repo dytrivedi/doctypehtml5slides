@@ -41,7 +41,7 @@
 
     <div class="presentation">
         <div class="slides">
-            <div class="slide current">
+            <!-- <div class="slide current">
                 <style>
                     #logowrapper {
                         left: auto;
@@ -87,7 +87,7 @@
                 <section class="middle" id="welcometitle">                    
                     <h1>Geolocation, Offline &amp;<br/> Mobile</h1>
                 </section>
-                <span class="counter">1</span>
+                <span class="counter"></span>
             </div>
             <div class="slide future">
                 <style>                    
@@ -111,7 +111,7 @@
                     <br/>
                     <h3><a class="twitter" href="http://twitter.com/dhavaltrivedi">@dhavaltrivedi</a></h3>
                 </section>
-                <span class="counter">2</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <style>
@@ -122,7 +122,7 @@
                 <section class="middle">
                     <h2 id="intentionalblank">This Page Intentionally Left Blank</h2>
                 </section>
-                <span class="counter">3</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <style>
@@ -131,14 +131,14 @@
                     }
                 </style>
                 <img id="censor" src="images/censor.png" alt="only for adults!" />
-                <span class="counter">4</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <section class="middle">
                     <img src="images/location.png" alt="where am i?" />
                     <h1>Geolocation</h1>
                 </section>
-                <span class="counter">5</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -157,7 +157,7 @@
                         </li>
                     </ul>
                 </section>
-                <span class="counter">6</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -187,7 +187,7 @@
                         </tbody>
                     </table>                    
                 </section>
-                <span class="counter">7</span>
+                <span class="counter"></span>
             </div>
              <div class="slide far-future">
                 <header>
@@ -208,7 +208,7 @@
                         }
                     </pre>
                 </section>
-                <span class="counter">8</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -240,7 +240,7 @@
                         }                        
                     </pre>
                 </section>
-                <span class="counter">9</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -303,7 +303,7 @@
                         </tbody>
                     </table>
                 </section>
-                <span class="counter">10</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -341,7 +341,7 @@
                         </tbody>
                     </table>
                 </section>
-                <span class="counter">11</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -384,7 +384,7 @@
                         </tbody>
                     </table>
                 </section>                
-                <span class="counter">12</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -402,7 +402,7 @@
                         navigator.geolocation.getCurrentPosition(show_map, handle_error, <b>{maximumAge:Infinity, timeout:0, enableHighAccuracy: true}</b>);
                     </pre>
                 </section>                
-                <span class="counter">13</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -426,7 +426,7 @@
                         }
                     </pre>
                 </section>
-                <span class="counter">14</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <style>
@@ -466,7 +466,7 @@
 		                }
 		            });*/
                 </script>
-                <span class="counter">15</span>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
                 <header>
@@ -486,14 +486,207 @@
                         <li>Doesn't support <b>watchPosition()</b> yet, so <b>getCurrentPosition()</b> has to be polled continuously.</li>
                     </ul>
                 </section>
-                <span class="counter">16</span>
+                <span class="counter"></span>
+            </div>-->
+           <!--<div class="slide current">
+                <section class="middle">
+                    <img src="images/offline.png" alt="Offline Storage FTW!" />
+                    <h1>Offline</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide future">
+                <header>
+                    <h1>Cookies</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>...suck!</li>
+                        <li>4 KB? What?</li>
+                        <li>Hard to code.</li>
+                        <li>Cookies leaks.</li>
+                        <li>Cookies are immortal.</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
             </div>
             <div class="slide far-future">
+                <header>
+                    <h1>Web Storage</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>A simple key/value pair storage.</li>
+                        <li>One API, easy to remember.</li>
+                    </ul>
+                    <pre>
+                        <span class="comments">// To set a key-value</span>
+                        <b>setItem</b>(key, value);
+                        <span class="comments">// even better</span>
+                        <b>localStorage</b>[key] = value;
+                        
+                        <span class="comments">// To get a value</span>
+                        string* <b>getItem</b>(key);
+                        <span class="comments">// moar better</span>
+                        var someInt = parseInt(<b>localStorage</b>[key]);
+
+                        <span class="comments">// Remove a value</span>
+                        <b>removeItem</b>(key);
+                        
+                        <span class="comments">// Get a key</span>
+                        string <b>key</b>(index);
+                        
+                        <span class="comments">// Clears the entire storage</span>
+                        <b>clear()</b>;
+                        
+                        <span class="comments">// Count</span>
+                        <b>.length</b>;
+                    </pre>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Two Instances</h1>
+                </header>
+                <section>
+                    <h2>localStorage</h2>
+                    <ul>
+                        <li>Persists until you or user explicitly clears.</li>
+                        <li>Applied to document origin - scheme/host/port tuple.</li>
+                        <li>No expiry.</li>
+                    </ul>
+                    <h2>sessionStorage</h2>
+                    <ul>
+                        <li>Lasts while on document origin.</li>
+                        <li>There ain't no leaks.</li>
+                        <li>Otherwise, the same as <b>localStorage</b>.</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Two things</h1>
+                </header>
+                <section>                    
+                    <ul>
+                        <li>Values are strings.</li>
+                        <li>To store complex objects, use JSONs.</li>                        
+                    </ul>                    
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Inspecting</h1>
+                </header>
+                <section class="middle">
+                    <img src="images/localstorageshot.png" alt="Local Storage" />
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Browser Support</h1>
+                </header>
+                <section class="middle">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>IE</th>
+                                <th>FireFox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Opera</th>
+                                <th>iPhone</th>
+                                <th>Android</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8.0+</td>
+                                <td>3.5+</td>
+                                <td>4.0+</td>
+                                <td>4.0+</td>
+                                <td>10.5+</td>
+                                <td>2.0+</td>
+                                <td>2.0+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>For unsupported browsers</h1>
+                </header>
+                <section>
+                    <h2>Detecting</h2>
+                    <ul>
+                        <li>Use <a href="http://www.modernizr.com/">Modernizr</a></li>                        
+                    </ul>
+                    <pre>
+                        if (<b>Modernizr.localstorage</b>) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// window.localStorage is available!</span>
+                        } else {
+                          &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// no native support for HTML5 storage :(</span>
+                          &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">// maybe try dojox.storage or a third-party solution</span>
+                        }                      
+                    </pre>
+                    <br/>
+                    <h2>Not supported?</h2>
+                    <ul>
+                        <li>window.name hack by Remy Sharp (twitter:<a href="http://twitter.com/rem">@rem</a>)</li>
+                        <li>Thanks Remy, for everything!</li>
+                        <li><a href="http://gist.github.com/350433">http://gist.github.com/350433</a></li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Alternatives</h1>
+                </header>
+                <section>
+                    <h2>Web SQL Database</h2>
+                    <ul>
+                        <li>Opera, Chrome, Safari, Mobile Safari. Firefox - never!</li>                        
+                    </ul>
+                    <pre>
+                        <span class="comments">// Sample code</span>
+                        openDatabase('documents', '1.0', 'Local document storage', 5*1024*1024, function (db) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;db.changeVersion('', '1.0', function (t) {
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.executeSql('CREATE TABLE docids (id, name)');
+                        &nbsp;&nbsp;&nbsp;&nbsp;}, error);
+                        });
+                    </pre>
+                    <br/>
+                    <h2>IndexedDB</h2>
+                    <ul>
+                        <li>Object Store - No SQL</li>
+                        <li>FireFox4 Beta only :(</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>-->
+            <div class="slide current">
+                <style>                    
+                </style>
+                <section class="middle">
+                    <img src="images/iphone.png" alt="Mobile" />
+                    <h1>Mobile</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <!--<div class="slide far-future">
                 <section class="middle">
                     <h1>Thank You.</h1>
                 </section>
-                <span class="counter">17</span>
-            </div>
+                <span class="counter"></span>
+            </div>-->
         </div> <!-- end of .slides -->
     </div> <!-- end of .presentation -->
 

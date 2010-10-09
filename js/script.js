@@ -62,6 +62,11 @@ jQuery(document).ready(function() {
             this.currentSlide++;
         }
     }
+    var i = 1;
+    jQuery('span.counter').each(function(){
+        jQuery(this).html(i);
+        i++;
+    });
     jQuery(document).keydown(function(e) {
         // left
         if (e.keyCode == '37') {
