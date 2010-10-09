@@ -25,9 +25,6 @@
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="js/modernizr-1.5.min.js"></script>
     
-    <!-- Cloudmade map for demo -->
-    <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
-    
     <script type="text/javascript" src="http://use.typekit.com/lnv2abr.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -41,7 +38,7 @@
 
     <div class="presentation">
         <div class="slides">
-            <!-- <div class="slide current">
+            <div class="slide current">
                 <style>
                     #logowrapper {
                         left: auto;
@@ -189,7 +186,7 @@
                 </section>
                 <span class="counter"></span>
             </div>
-             <div class="slide far-future">
+            <div class="slide far-future">
                 <header>
                     <h1>The geolocation object</h1>
                 </header>
@@ -427,47 +424,7 @@
                     </pre>
                 </section>
                 <span class="counter"></span>
-            </div>
-            <div class="slide far-future">
-                <style>
-                    #map_demo {
-                        width:100%;
-                        height:480px;
-                    }
-                </style>
-                <header>
-                    <h1>Demo</h1>
-                </header>                
-                <section>
-                    <button id="whereami">Where am I?</button>
-                    <br/><br/>
-                    <div id="map_demo"></div>
-                </section>
-                <script>
-                    /*var cloudmade = new CM.Tiles.CloudMade.Web({key: 'BC9A493B41014CAABB98F0471D759707',styleId: 15801});
-	                var map_demo = new CM.Map('map_demo', cloudmade);
-	                map_demo.disableScrollWheelZoom();
-	                map_demo.addControl(new CM.LargeMapControl());
-	                map_demo.addControl(new CM.ScaleControl());
-	                var meIcon = new CM.Icon();
-	                meIcon.image = "images/icon_me.png";
-	                meIcon.iconSize = new CM.Size(28, 47);
-	                meIcon.iconAnchor = new CM.Point(14, 47);
-	                var currentLatLng = new CM.LatLng(0,0);
-		            map_demo.setCenter(currentLatLng,1);
-		            document.getElementById('whereami').addEventListener('click', function(){
-		                if (navigator.geolocation) {		                    
-		                    navigator.geolocation.getCurrentPosition(show_map);
-		                }
-		                function show_map(position){
-		                    alert('test');
-    		                currentLatLng = new CM.LatLng(position.coords.latitude, position.coords.longitude);
-    		                map_demo.setCenter(currentLatLng,15);
-		                }
-		            });*/
-                </script>
-                <span class="counter"></span>
-            </div>
+            </div>            
             <div class="slide far-future">
                 <header>
                     <h1>Unsupported platforms?</h1>
@@ -487,15 +444,15 @@
                     </ul>
                 </section>
                 <span class="counter"></span>
-            </div>-->
-           <!--<div class="slide current">
+            </div>
+           <div class="slide far-future">
                 <section class="middle">
                     <img src="images/offline.png" alt="Offline Storage FTW!" />
                     <h1>Offline</h1>
                 </section>
                 <span class="counter"></span>
             </div>
-            <div class="slide future">
+            <div class="slide far-future">
                 <header>
                     <h1>Cookies</h1>
                 </header>
@@ -504,7 +461,7 @@
                         <li>...suck!</li>
                         <li>4 KB? What?</li>
                         <li>Hard to code.</li>
-                        <li>Cookies leaks.</li>
+                        <li>Cookies leak.</li>
                         <li>Cookies are immortal.</li>
                     </ul>
                 </section>
@@ -569,11 +526,11 @@
                 <header>
                     <h1>Two things</h1>
                 </header>
-                <section>                    
+                <section>
                     <ul>
                         <li>Values are strings.</li>
-                        <li>To store complex objects, use JSONs.</li>                        
-                    </ul>                    
+                        <li>To store complex objects, use JSONs.</li>
+                    </ul>
                 </section>
                 <span class="counter"></span>
             </div>
@@ -614,8 +571,7 @@
                                 <td>2.0+</td>
                             </tr>
                         </tbody>
-                    </table>
-                    
+                    </table>                    
                 </section>
                 <span class="counter"></span>
             </div>
@@ -671,22 +627,167 @@
                     </ul>
                 </section>
                 <span class="counter"></span>
-            </div>-->
-            <div class="slide current">
-                <style>                    
-                </style>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Offline Caching</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>List of URLs - HTML, CSS, JavaScript, images, etc.</li>
+                        <li>Revolves around a manifest file.</li>                        
+                        <li>Beware - if any resource fails, the app will not work offline.</li>                        
+                    </ul>
+                    <br/>
+                    <h2>Including a cache manifest</h2>
+                    <pre>
+                        &lt;!DOCTYPE HTML&gt;
+                        &lt;html <b>manifest="cache.manifest"</b>&gt;
+                        &lt;body&gt;
+                        ...
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </pre>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>The Manifest</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>Serve as text/manifest by adding to mime.types:<br/>
+                            text/cache-manifest manifest
+                        </li>
+                        <li>First line must be:<br/>
+                            CACHE MANIFEST
+                        </li>
+                        <li>Including page is implicitly included in the cache.</li>                        
+                        <li>Add some versioning.<br/>
+                            # version 3
+                        </li>
+                        <li>Moar namespaces - <b>NETWORK</b> and <b>OFFLINE</b>.</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h2>Sample cache.manifest</h2>
+                </header>
+                <section>
+                    <pre>
+                        CACHE MANIFEST
+                        #version 3
+                        CACHE:
+                        index.html
+                        css/style.css
+                        js/script.js
+                        # the whitelist
+                        NETWORK:
+                        /live/*
+                        /ajax/*
+                        FALLBACK:
+                        / offline.html
+                        # or foo/bar foo.html
+                    </pre>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
                 <section class="middle">
                     <img src="images/iphone.png" alt="Mobile" />
                     <h1>Mobile</h1>
                 </section>
                 <span class="counter"></span>
             </div>
-            <!--<div class="slide far-future">
+            <div class="slide far-future">
+                <header>
+                    <h1>Browsers</h1>
+                </header>
+                <section>                    
+                    <ul>
+                        <li>Mobile Safari - iPhone/iPod/iPad</li>
+                        <li>Android Browser</li>
+                        <li>Opera Mini &amp; Mobile</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Frameworks</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>jQtouch - favors Apple/Webkit. For iPhone/iPod.</li>
+                        <li>Sencha - favors Apple/Webkit. For iPad.</li>
+                        <li>A lot others. Who cares?</li>                        
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">                
+                <section class="middle">
+                    <h1>A lot of pain.</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">                
+                <section class="middle">
+                    <h1>But don't worry!</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">                
+                <section class="middle">
+                    <h1>jQuery Mobile</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>jQuery Mobile</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>Seriously cross platform and cross device.</li>
+                        <li>Strategy - "Delivering top-of-the-line JavaScript and a unified User Interface across the most-used smartphone web browsers."</li>
+                        <li>Not mimicking any particular platform design.</li>
+                        <li>A universal design system that will feel “right” on a broad range of devices.</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <header>
+                    <h1>Performance Tips</h1>
+                </header>
+                <section>
+                    <ul>
+                        <li>Scripts at bottom.</li>
+                        <li>Store as much UI offline.</li>
+                        <li>Pre-load UI for responsiveness, lazy load data.</li>
+                        <li>Use HTML5 - flatter DOM.</li>
+                        <li>In JS, select in context (descend from IDs, etc).</li>
+                        <li>Also, cache your selectors.</li>
+                    </ul>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
+                <section class="middle">
+                    <h1>Demo</h1>
+                </section>
+                <span class="counter"></span>
+            </div>
+            <div class="slide far-future">
                 <section class="middle">
                     <h1>Thank You.</h1>
                 </section>
                 <span class="counter"></span>
-            </div>-->
+            </div>
         </div> <!-- end of .slides -->
     </div> <!-- end of .presentation -->
 
