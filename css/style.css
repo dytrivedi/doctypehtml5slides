@@ -283,8 +283,8 @@ section ul li {
 }
 .slide {
     background: #b9bcdd url(../images/bg.png) repeat-x;
-    background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#BBD), to(white));
-    background: -moz-linear-gradient(center bottom , #BBBBDD, #FFFFFF) repeat scroll 0 0 transparent;
+    background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#BBD), to(white));
+    background-image: -moz-linear-gradient(center bottom , #BBBBDD, #FFFFFF) repeat scroll 0 0 transparent;
 }
 .slide .counter {
     display: block;
