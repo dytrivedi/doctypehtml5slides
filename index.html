@@ -678,17 +678,19 @@
                 </header>
                 <section>
                     <pre>
-                        CACHE MANIFEST
-                        #version 3
-                        CACHE:
+                        <b>CACHE MANIFEST</b>
+                        <span class="comments">#version 3</span>
+                        <span class="comments">#URLs to be cached</span>
+                        <b>CACHE:</b>
                         index.html
                         css/style.css
                         js/script.js
-                        # the whitelist
-                        NETWORK:
+                        <span class="comments"># the whitelist</span>
+                        <b>NETWORK:</b>
                         /live/*
                         /ajax/*
-                        FALLBACK:
+                        <span class="comments"># fallback(s)</span>
+                        <b>FALLBACK:</b>
                         / offline.html
                         # or foo/bar foo.html
                     </pre>
