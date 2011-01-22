@@ -343,6 +343,11 @@ table td, table th {
     padding: 10px;
     border: 1px dashed #444444;
 }
+#html5wrapper {
+    background: white;
+    border-radius: 0;
+    -moz-border-radius: 0;    
+}
 
 
 
